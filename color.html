@@ -8,24 +8,25 @@
 </head>
 <body>
     <div class="colors">
-        <span  style="--clr: #1dd1a1;"></span>
-        <span  style="--clr: #ff6b6b;"></span>
-        <span  style="--clr: #2e86de;"></span>
-        <span  style="--clr: #f368e0;"></span>
-        <span  style="--clr: #ff9f43;"></span>
+        <span style="--clr: #1dd1a1;" onclick="changeColor(this)"></span>
+        <span style="--clr: #ff6b6b;" onclick="changeColor(this)"></span>
+        <span style="--clr: #2e86de;" onclick="changeColor(this)"></span>
+        <span style="--clr: #f368e0;" onclick="changeColor(this)"></span>
+        <span style="--clr: #ff9f43;" onclick="changeColor(this)"></span>
     </div>
 
     <div class="box"></div>
     
     <script>
-        let box  = document.querySelector('.box');
-        function changeColor(color){
+         function changeColor(element) {
+            let color = element.style.getPropertyValue("--clr");
+            let box = document.querySelector('.box');
             box.style.background = color;
-            document.querySelector('span').forEach(function(item){
-
+            document.querySelectorAll('.colors span').forEach(function(item) {
+                item.classList.remove('active');
             });
-            event.target.classlist.add('active');
-        } 
+            element.classList.add('active');
+        }
     </script>
 
 </body>
