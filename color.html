@@ -8,13 +8,25 @@
 </head>
 <body>
     <div class="colors">
-        <span  style="color: aquamarine;"></span>
-        <span  style="color: crimson;"></span>
-        <span  style="color: dodgerblue;"></span>
-        <span  style="color: deeppink;"></span>
-        <span  style="color: coral;"></span>
+        <span  style="--clr: #1dd1a1;"></span>
+        <span  style="--clr: #ff6b6b;"></span>
+        <span  style="--clr: #2e86de;"></span>
+        <span  style="--clr: #f368e0;"></span>
+        <span  style="--clr: #ff9f43;"></span>
     </div>
+
     <div class="box"></div>
     
+    <script>
+        let box  = document.querySelector('.box');
+        function changeColor(color){
+            box.style.background = color;
+            document.querySelector('span').forEach(function(item){
+
+            });
+            event.target.classlist.add('active');
+        } 
+    </script>
+
 </body>
 </html>
